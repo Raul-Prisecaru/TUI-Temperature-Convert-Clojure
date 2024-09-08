@@ -21,6 +21,8 @@
       [value]
       (println (+ 273.15 (* (- value 32) (/ 5 9)))))
 
+
+
 (defn KtoC
       [value]
       (println (- value 273.15)))
@@ -29,19 +31,14 @@
       [value]
       (println  (+ 32 (* 1.8 (- value  273.15)))))
 ;; Implement Readline
-(defn -main
-  [option calValue]
-      (println "[1] - Celsius to Fahrenheit"
-               "[2] - Celsius to Kelvin"
-               "[3] - Fahrenheit to Celsius"
-               "[4] - Fahrenheit to Kelvin"
-               "[5] - Kelvin to Celsius"
-               "[6] - Kelvin to Fahrenheit")
+
+(defn together
+      [option calValue]
 
       (if (= option 1)
         (do
           (println "Calculating Celsius to Fahrenheit")
-          (CtoF calValue)))
+          (println(CtoF calValue))))
 
       (if (= option 2)
         (do
@@ -71,9 +68,30 @@
           (println "Calculating Kelvin to Fahrenheit")
           (KtoF calValue)))
 
-
-
-
-
       )
+
+
+(defn -main
+  []
+      (println "[1] - Celsius to Fahrenheit" (newline)
+               "[2] - Celsius to Kelvin"
+               "[3] - Fahrenheit to Celsius"
+               "[4] - Fahrenheit to Kelvin"
+               "[5] - Kelvin to Celsius"
+               "[6] - Kelvin to Fahrenheit")
+      (def userOption (Integer/parseInt (read-line)))
+
+      (println "Enter Value to Convert")
+      (def userValue (Integer/parseInt (read-line)))
+
+
+
+      (together userOption userValue))
+
+
+
+
+
+
+
 
