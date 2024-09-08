@@ -38,7 +38,7 @@
       (if (= option 1)
         (do
           (println "Calculating Celsius to Fahrenheit")
-          (println(CtoF calValue))))
+          (CtoF calValue))))
 
       (if (= option 2)
         (do
@@ -73,12 +73,16 @@
 
 (defn -main
   []
-      (println "[1] - Celsius to Fahrenheit" (newline)
-               "[2] - Celsius to Kelvin"
-               "[3] - Fahrenheit to Celsius"
-               "[4] - Fahrenheit to Kelvin"
-               "[5] - Kelvin to Celsius"
-               "[6] - Kelvin to Fahrenheit")
+      (println
+        "--- Celsius Conversion --- \n"
+        "[1] - Celsius to Fahrenheit\n"
+        "[2] - Celsius to Kelvin\n"
+        "--- Fahrenheit Conversion --- \n"
+        "[3] - Fahrenheit to Celsius\n"
+        "[4] - Fahrenheit to Kelvin\n"
+        "--- Kelvin Conversion--- \n"
+        "[5] - Kelvin to Celsius\n"
+        "[6] - Kelvin to Fahrenheit\n")
       (def userOption (Integer/parseInt (read-line)))
 
       (println "Enter Value to Convert")
